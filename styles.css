@@ -1,39 +1,201 @@
-body{
-  padding: 50px;
-  background-image: "background.webp";
-}
-.title {
-	color: rgb(142, 168, 226);
-	font:montserrat-;
-}
-h1{
-  font-family:Montserrat;
-  font-size: 50px;
-  margin: 0px;
-}
-
-p{
-  margin: 0px;
-  font-family:Quicksand;
-  font-size: 25px;
-  text-align: left
-}
-.montserrat-<uniquifier> {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
+.momo-trust-display-regular {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
+body {
+  background-color: #f9f9f9; /* softer background */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-.quicksand-<uniquifier> {
+/* Header */
+.header {
+  display: flex;
+  justify-content: flex-start;   /* logo + text aligned left */
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 8px 16px;             /* smaller padding */
+  border-bottom: 1px solid #e0e0e0; /* subtle divider */
+  margin: 0;
+}
+
+.header img {
+  height: 40px;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Button */
+.cta-button {
+  background-color: #4CAF50; /* vibrant green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  margin-left: 30px;
+  height: 30px;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+    font-family: "Momo Trust Display", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Banner */
+.banner {
+  background: linear-gradient(90deg, lightgreen, #a8e6cf);
+  text-align: center;
+  padding: 12px;
+  display: flex;
+  width: 80%;
+  border-radius: 12px;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  margin: 20px auto;         /* centers the banner itself */
+}
+
+.banner h4 {
+  margin: 0;
+  color: #333;
+}
+
+.welcome{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
   font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
 }
 
-header{
-  background-color: white;
+.title{
+  font-family: "Momo Signature", cursive;
+  font-size: 350%;
+  width: 100%;
+}
 
+
+.download-button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  width: 320px;
+  height: 60px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: "Momo Trust Display", sans-serif;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: scale(1.05);
+}
+
+.download-button .icon {
+  height: 28px;
+  width: 28px;
+  filter: brightness(0) invert(1); /* makes most logos white */
+  transition: transform 0.3s ease;
+}
+
+.download-button:hover .icon {
+  transform: rotate(10deg);
+}
+
+.screenshot-wrapper {
+  position: relative;   /* allows absolute positioning inside */
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+/* Text block in top-right corner */
+.text-block {
+  position: absolute;
+  top: 20px;        /* distance from top */
+  right: 20px;      /* distance from right */
+  background: rgba(255, 255, 255, 0.85); /* subtle background for readability */
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Quicksand", sans-serif;
+  text-align: right; /* aligns text nicely inside the block */
+}
+
+.text-block h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.text-block p {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+
+/* Base style */
+.screenshots {
+  display: block;
+  position: relative;        /* enable z-index to work */
+  height: auto;
+  width: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(15, 15, 15, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Default stacking order */
+.screenshots.first  { z-index: 1; }
+.screenshots.second { z-index: 2; }
+
+/* Per-image hover: bring hovered image to the top */
+.screenshots.first:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.screenshots.second:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* Positioning (example: first peeks left, second overlaps offscreen right and down) */
+.screenshots.first {
+  max-width: 65vw;
+  margin-left: -100px;
+}
+
+.screenshots.second {
+  position: absolute;  /* free from flex flow for precise overlap */
+  right: -140px;
+  top: 180px;
+  max-width: 60vw;
 }
